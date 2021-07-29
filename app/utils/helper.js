@@ -1,11 +1,18 @@
+let {ValidationError} = require('express-json-validator-middleware');
+
 class ErrorHandler{
     
     handleError(err,req,res,next){
-        if( err instanceof APIError){
+        
+        if( err instanceof ValidationError){
             
+            res.status(400).json({"Message" : "Bad Request Invalid Inputs"});
+
         }
         else{
-            res.status(500).json("Sorry Something Went Wrong in Our End , Internal Server Error");
+
+            res.status(500).json({"Message" : "Sorry Something Went Wrong in Our End , Internal Server Error"});
+
         }
     }
 }

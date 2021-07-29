@@ -10,7 +10,7 @@ class Products{
 
     handleAddProduct(productDetails){
 
-        product.addProduct(productDetails);
+       return  product.addProduct(productDetails);
 
     }
 
@@ -19,13 +19,13 @@ class Products{
         let productId = productDetails['id'];
         delete productDetails['id'];
 
-        product.updateProduct(productId,productDetails);
+        return product.updateProduct(productId,productDetails);
 
     }
 
     handleDeleteProduct(productDetails){
 
-        product.deleteProduct(productDetails['id']);
+        return product.deleteProduct(productDetails['id']);
 
     }
 }

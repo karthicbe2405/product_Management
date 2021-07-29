@@ -8,6 +8,8 @@ class FileHandler{
         const stringifyData = JSON.stringify(data);
 
         fs.writeFileSync(dataPath, stringifyData);
+
+        return true;
     }
 
     getProductData(){

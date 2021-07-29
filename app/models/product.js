@@ -14,11 +14,11 @@ Product.prototype.addProduct = function(product){
 
     let Products = this.getProducts();
 
-    let newProductId = Math.floor(( Math.random() + Math.random() ) * 10000);
+    let newProductId = Math.ceil(( Math.random() + Math.random() ) * 10000);
 
     Products[newProductId] = product;
 
-    fileHandler.saveProductData(Products);
+    return fileHandler.saveProductData(Products);
 
 }
 
@@ -28,7 +28,7 @@ Product.prototype.updateProduct = function(productId,product){
 
     Products[productId] = product;
 
-    fileHandler.saveProductData(Products);
+    return fileHandler.saveProductData(Products);
 
 }
 
@@ -38,7 +38,7 @@ Product.prototype.deleteProduct = function(productId){
 
     delete Products[productId];
 
-    fileHandler.saveProductData(Products);
+    return fileHandler.saveProductData(Products);
 
 }
 
